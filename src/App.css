@@ -1,0 +1,228 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.input-section {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: #646cff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.todo-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.add-button {
+  padding: 0.875rem 1.5rem;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background: #535bf2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.4);
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+.todos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #646cff;
+}
+
+.todo-text {
+  flex: 1;
+  color: #fff;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.delete-button {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 59, 48, 0.2);
+  color: #ff3b30;
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+  background: rgba(255, 59, 48, 0.3);
+  border-color: rgba(255, 59, 48, 0.5);
+  transform: scale(1.05);
+}
+
+.empty-message {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.stats {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .todo-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    color: #213547;
+  }
+
+  .todo-input {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+    color: #213547;
+  }
+
+  .todo-input:focus {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .todo-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .todo-item {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .todo-item:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .todo-text {
+    color: #213547;
+  }
+
+  .todo-item.completed .todo-text {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .empty-message {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .stats {
+    color: rgba(0, 0, 0, 0.6);
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .todo-container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
